@@ -32,5 +32,4 @@ describe('App home page', () => {
       .get('div a').should('exist')
       .get('div p').should('exist')
   })
-
 })
