@@ -28,6 +28,9 @@ describe('App home page', () => {
 
   it('Should have a shortened url', () => {
     cy.get('div').should('exist')
+      .get('div h3').should('contain', 'Cypress Test')
+      .get('div a').should('exist')
+      .get('div p').should('exist')
   })
 
 })
