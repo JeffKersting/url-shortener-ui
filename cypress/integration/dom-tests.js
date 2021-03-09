@@ -12,5 +12,22 @@ describe('App home page', () => {
       .should('contain', 'Cypress Test')
   })
 
-  
+  it('Should have a header that contains a url form', () => {
+    cy.get('header')
+      .should('contain', 'URL Shortener')
+      .get('form').should('exist')
+  })
+
+  it('Should have a form that contains inputs and a submit button', () => {
+    cy.get('form').should('exist')
+      .get('input[name=title]').should('exist')
+      .get('input[name=url]').should('exist')
+      .get('button').should('exist')
+      .and('contain', 'Shorten Please!')
+  })
+
+  it('Should have a shortened url', () => {
+    cy.get('div').should('exist')
+  })
+
 })
