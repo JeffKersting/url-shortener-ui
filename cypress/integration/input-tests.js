@@ -19,4 +19,11 @@ describe('Form inputs', () => {
     cy.get('input[name=url]')
       .type('http://cypresstesturl')
   })
+
+  it('Should show the user input in their respective fields', () => {
+    cy.get('input[name=title]')
+      .should('have.value', 'Cypress Test Title')
+      .get('input[name=url]')
+      .should('have.value', 'http://cypresstesturl')
+  })
 })
