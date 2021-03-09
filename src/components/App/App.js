@@ -12,11 +12,16 @@ function App() {
     fetchRequests.getUrls().then(results => setUrls(results['urls']))
   }, [])
 
+  const updateUrls = () => {
+    fetchRequests.getUrls().then(results => setUrls(results['urls']))
+  }
+
+
   return (
     <main className="App">
       <header>
         <h1>URL Shortener</h1>
-        <UrlForm />
+        <UrlForm updateUrls={updateUrls}/>
       </header>
 
       <UrlContainer urls={urls}/>

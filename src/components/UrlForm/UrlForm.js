@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import fetchRequests from '../../apiCalls';
 
 
-function UrlForm() {
+function UrlForm({ updateUrls }) {
 
   const [title, setTitle] = useState('')
   const [urlToShorten, setUrl] = useState('')
@@ -16,6 +16,7 @@ function UrlForm() {
   const handleSubmit = e => {
     e.preventDefault();
     fetchRequests.postUrl(urlToShorten, title)
+      .then(updateUrls())
     clearInputs();
   }
 
