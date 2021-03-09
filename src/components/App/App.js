@@ -16,7 +16,6 @@ function App() {
     fetchRequests.getUrls().then(results => setUrls(results['urls']))
   }
 
-
   return (
     <main className="App">
       <header>

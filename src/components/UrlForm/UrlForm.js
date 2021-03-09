@@ -25,9 +25,6 @@ function UrlForm({ updateUrls }) {
     setUrl('')
   }
 
-
-
-
   return (
     <form>
       <input
@@ -51,7 +48,6 @@ function UrlForm({ updateUrls }) {
       </button>
     </form>
   )
-
 }
 
 export default UrlForm;
