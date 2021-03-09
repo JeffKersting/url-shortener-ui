@@ -40,7 +40,10 @@ describe('Form submission', () => {
   })
 
   it('Should render the new shortened url on the page', () => {
-    cy.get('div ')
+    cy.get('div').eq(2)
+      .should('contain', 'Cypress Test Title')
+      .and('contain', 'http://cypresstesturl/longurl/requesttoshorten')
+      .and('contain', 'http://localhost:3001/useshorturl/2')
   })
 
   it('Should clear the inputs after form submission', () => {
