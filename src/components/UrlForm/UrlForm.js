@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
-class UrlForm extends Component {
+function UrlForm({ urls }) {
   constructor(props) {
     super();
     this.props = props;
@@ -9,6 +9,9 @@ class UrlForm extends Component {
       urlToShorten: ''
     };
   }
+
+  const [title, setTitle] = useState('')
+  const [urlToShorten] = useState('')
 
   handleNameChange = e => {
     this.setState({ [e.target.name]: e.target.value });
