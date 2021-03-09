@@ -8,6 +8,11 @@ describe('Form submission', () => {
         })
     })
 
+
+    cy.visit('http://localhost:3000')
+  })
+
+  it('Should allow users to post a new url in the form', () => {
     cy.intercept("POST", "http://localhost:3001/api/v1/urls", {
       statusCode: 200,
       headers: {
@@ -19,15 +24,23 @@ describe('Form submission', () => {
       })
     })
 
-    cy.visit('http://localhost:3000')
-  })
+    cy.fixture('../fixtures/post-urls.json')
+      .then((response) => {
+        cy.intercept("GET", "http://localhost:3001/api/v1/urls", {
+          statusCode: 200,
+          body: response
+        })
+    })
 
-  it('Should allow users to post a new url in the form', () => {
     cy.get('input[name=title]')
       .type('Cypress Test Title')
       .get('input[name=url]')
       .type('http://cypresstesturl/longurl/requesttoshorten')
       .get('form button').click()
+  })
+
+  it('Should render the new shortened url on the page', () => {
+    cy.get('div ')
   })
 
   it('Should clear the inputs after form submission', () => {
