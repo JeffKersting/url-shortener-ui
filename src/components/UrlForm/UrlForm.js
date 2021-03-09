@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import fetchRequests from '../../apiCalls';
+
 
 function UrlForm() {
 
@@ -13,12 +15,16 @@ function UrlForm() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    this.clearInputs();
+    fetchRequests.postUrl(urlToShorten, title)
+    clearInputs();
   }
 
   const clearInputs = () => {
-    this.setState({title: '', urlToShorten: ''});
+    setTitle('')
+    setUrl('')
   }
+
+
 
 
   return (
