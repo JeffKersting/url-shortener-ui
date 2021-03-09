@@ -3,10 +3,12 @@ import React, { useState } from 'react';
 function UrlForm() {
 
   const [title, setTitle] = useState('')
-  const [urlToShorten] = useState('')
+  const [urlToShorten, setUrl] = useState('')
 
-  const handleNameChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
+  const handleInputChange = e => {
+    e.target.name === 'title' ?
+      setTitle(e.target.value) :
+      setUrl(e.target.value)
   }
 
   const handleSubmit = e => {
@@ -26,15 +28,15 @@ function UrlForm() {
         placeholder='Title...'
         name='title'
         value={title}
-        onChange={e => handleNameChange(e)}
+        onChange={e => handleInputChange(e)}
       />
 
       <input
         type='text'
         placeholder='URL to Shorten...'
-        name='title'
-        value={title}
-        onChange={e => handleNameChange(e)}
+        name='url'
+        value={urlToShorten}
+        onChange={e => handleInputChange(e)}
       />
 
       <button onClick={e => handleSubmit(e)}>
