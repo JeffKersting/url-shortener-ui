@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function UrlForm({ urls }) {
+function UrlForm() {
   constructor(props) {
     super();
     this.props = props;
