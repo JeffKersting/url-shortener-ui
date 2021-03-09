@@ -15,10 +15,10 @@ function App() {
         <UrlForm />
       </header>
 
-      <UrlContainer urls={this.state.urls}/>
+      <UrlContainer urls={urls}/>
     </main>
   );
-  
+
 }
 
 export default App;
