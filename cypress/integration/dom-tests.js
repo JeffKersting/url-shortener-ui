@@ -32,4 +32,8 @@ describe('App home page', () => {
       .get('div a').should('exist')
       .get('div p').should('exist')
   })
+
+  it('Should have a link in the url container', () => {
+    cy.get('div a').should('have.attr', 'href')
+  })
 })
