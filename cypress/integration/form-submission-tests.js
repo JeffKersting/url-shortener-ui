@@ -30,8 +30,11 @@ describe('Form submission', () => {
       .get('form button').click()
   })
 
-  it.skip('Should clear the inputs after form submission', () => {
-
+  it('Should clear the inputs after form submission', () => {
+    cy.get('input[name=title]')
+      .should('be.empty')
+      .get('input[name=url]')
+      .should('be.empty')
   })
 
 })
